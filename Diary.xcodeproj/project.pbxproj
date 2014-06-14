@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92ACF483194C6AAE00F036CB /* THCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACF482194C6AAE00F036CB /* THCoreDataStack.m */; };
 		92C5140B194952CD00C8AB96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C5140A194952CD00C8AB96 /* main.m */; };
 		92C5140E194952CD00C8AB96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C5140D194952CD00C8AB96 /* AppDelegate.m */; };
 		92C51411194952CD00C8AB96 /* Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92C5140F194952CD00C8AB96 /* Diary.xcdatamodeld */; };
@@ -25,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92ACF481194C6AAE00F036CB /* THCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THCoreDataStack.h; sourceTree = "<group>"; };
+		92ACF482194C6AAE00F036CB /* THCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THCoreDataStack.m; sourceTree = "<group>"; };
 		92C51405194952CD00C8AB96 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C51409194952CD00C8AB96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C5140A194952CD00C8AB96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 				92C51412194952CD00C8AB96 /* Images.xcassets */,
 				92C5140F194952CD00C8AB96 /* Diary.xcdatamodeld */,
 				92C51408194952CD00C8AB96 /* Supporting Files */,
+				92ACF481194C6AAE00F036CB /* THCoreDataStack.h */,
+				92ACF482194C6AAE00F036CB /* THCoreDataStack.m */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C51411194952CD00C8AB96 /* Diary.xcdatamodeld in Sources */,
+				92ACF483194C6AAE00F036CB /* THCoreDataStack.m in Sources */,
 				92C5140E194952CD00C8AB96 /* AppDelegate.m in Sources */,
 				92C5140B194952CD00C8AB96 /* main.m in Sources */,
 			);
@@ -386,6 +392,7 @@
 				92C51424194952CD00C8AB96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92C51425194952CD00C8AB96 /* Build configuration list for PBXNativeTarget "DiaryTests" */ = {
 			isa = XCConfigurationList;
@@ -394,6 +401,7 @@
 				92C51427194952CD00C8AB96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

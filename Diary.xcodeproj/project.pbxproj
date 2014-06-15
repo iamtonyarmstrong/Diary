@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		92ACF483194C6AAE00F036CB /* THCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACF482194C6AAE00F036CB /* THCoreDataStack.m */; };
 		92ACF486194D0A6400F036CB /* THDiaryEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACF485194D0A6400F036CB /* THDiaryEntry.m */; };
+		92ACF488194DE90200F036CB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92ACF487194DE90200F036CB /* MainStoryboard.storyboard */; };
+		92ACF48B194E3E9C00F036CB /* THNewEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACF48A194E3E9C00F036CB /* THNewEntryViewController.m */; };
+		92ACF48E194E583D00F036CB /* THEntryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACF48D194E583D00F036CB /* THEntryListViewController.m */; };
+		92ACF490194E593C00F036CB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92ACF48F194E593C00F036CB /* CoreData.framework */; };
 		92C5140B194952CD00C8AB96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C5140A194952CD00C8AB96 /* main.m */; };
 		92C5140E194952CD00C8AB96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C5140D194952CD00C8AB96 /* AppDelegate.m */; };
 		92C51411194952CD00C8AB96 /* Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92C5140F194952CD00C8AB96 /* Diary.xcdatamodeld */; };
@@ -31,6 +35,12 @@
 		92ACF482194C6AAE00F036CB /* THCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THCoreDataStack.m; sourceTree = "<group>"; };
 		92ACF484194D0A6400F036CB /* THDiaryEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDiaryEntry.h; sourceTree = "<group>"; };
 		92ACF485194D0A6400F036CB /* THDiaryEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDiaryEntry.m; sourceTree = "<group>"; };
+		92ACF487194DE90200F036CB /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		92ACF489194E3E9C00F036CB /* THNewEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THNewEntryViewController.h; sourceTree = "<group>"; };
+		92ACF48A194E3E9C00F036CB /* THNewEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THNewEntryViewController.m; sourceTree = "<group>"; };
+		92ACF48C194E583D00F036CB /* THEntryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THEntryListViewController.h; sourceTree = "<group>"; };
+		92ACF48D194E583D00F036CB /* THEntryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THEntryListViewController.m; sourceTree = "<group>"; };
+		92ACF48F194E593C00F036CB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		92C51405194952CD00C8AB96 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C51409194952CD00C8AB96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92C5140A194952CD00C8AB96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -48,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92ACF490194E593C00F036CB /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,9 +99,14 @@
 				92C5140F194952CD00C8AB96 /* Diary.xcdatamodeld */,
 				92ACF484194D0A6400F036CB /* THDiaryEntry.h */,
 				92ACF485194D0A6400F036CB /* THDiaryEntry.m */,
+				92ACF487194DE90200F036CB /* MainStoryboard.storyboard */,
 				92C51408194952CD00C8AB96 /* Supporting Files */,
 				92ACF481194C6AAE00F036CB /* THCoreDataStack.h */,
 				92ACF482194C6AAE00F036CB /* THCoreDataStack.m */,
+				92ACF489194E3E9C00F036CB /* THNewEntryViewController.h */,
+				92ACF48A194E3E9C00F036CB /* THNewEntryViewController.m */,
+				92ACF48C194E583D00F036CB /* THEntryListViewController.h */,
+				92ACF48D194E583D00F036CB /* THEntryListViewController.m */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -98,6 +114,7 @@
 		92C51408194952CD00C8AB96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92ACF48F194E593C00F036CB /* CoreData.framework */,
 				92C51409194952CD00C8AB96 /* Info.plist */,
 				92C5140A194952CD00C8AB96 /* main.m */,
 			);
@@ -200,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92ACF488194DE90200F036CB /* MainStoryboard.storyboard in Resources */,
 				92C51413194952CD00C8AB96 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92ACF48E194E583D00F036CB /* THEntryListViewController.m in Sources */,
+				92ACF48B194E3E9C00F036CB /* THNewEntryViewController.m in Sources */,
 				92C51411194952CD00C8AB96 /* Diary.xcdatamodeld in Sources */,
 				92ACF483194C6AAE00F036CB /* THCoreDataStack.m in Sources */,
 				92C5140E194952CD00C8AB96 /* AppDelegate.m in Sources */,

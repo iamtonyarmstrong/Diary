@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface THEntryListViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface THEntryListViewController : UITableViewController <NSFetchedResultsControllerDelegate, UITableViewDataSource>
 
 @end

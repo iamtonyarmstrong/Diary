@@ -10,6 +10,7 @@
 #import "THCoreDataStack.h"
 #import "THDiaryEntry.h"
 
+
 @interface THNewEntryViewController ()
 
 @end
@@ -29,6 +30,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if(self.entry != nil){
+        self.textField.text = self.entry.body;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,8 +44,20 @@
 #pragma mark - Action methods
 - (IBAction)doneWasPressed:(id)sender
 {
-    [self insertNewDiaryEntry];
+    if(self.entry != nil){
+        [self updateDiaryEntry];
+    } else {
+        [self insertNewDiaryEntry];
+    }
     [self dismissSelf];
+}
+
+
+- (void) updateDiaryEntry
+{
+    self.entry.body = self.textField.text;
+    THCoreDataStack *coreDataStack = [THCoreDataStack defaultStack];
+    [coreDataStack saveContext];
 }
 
 - (IBAction)cancelWasPressed:(id)sender
@@ -68,15 +84,8 @@
                                                       }];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
 
 @end

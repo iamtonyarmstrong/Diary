@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class THDiaryEntry;
 
 @interface THNewEntryViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (nonatomic, strong) THDiaryEntry * entry;
 
 @end

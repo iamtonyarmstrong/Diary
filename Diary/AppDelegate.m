@@ -18,9 +18,12 @@
 
             
 
+#pragma mark - Base AppDelegate Functions
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    [self setupAppearance];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -47,6 +50,20 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     //[self saveContext];
+}
+
+
+#pragma mark - Base AppDelegate Functions
+- (void) setupAppearance
+{
+    UINavigationBar * navigationBarAppearance = [UINavigationBar appearance];
+    navigationBarAppearance.barTintColor = [UIColor colorWithRed:77.0/255.0
+                                                           green:164.0/255.0
+                                                            blue:191.0/255.0
+                                                           alpha:1.0];
+
+    navigationBarAppearance.tintColor = [UIColor whiteColor];
+    navigationBarAppearance.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
 }
 
 @end

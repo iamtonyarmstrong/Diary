@@ -9,6 +9,8 @@
 #import "THEntryListViewController.h"
 #import "THCoreDataStack.h"
 #import "THDiaryEntry.h"
+#import "THNewEntryViewController.h"
+#import "THEntryCell.h"
 
 @interface THEntryListViewController ()
 
@@ -44,6 +46,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    THDiaryEntry * entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    return [THEntryCell heightForEntry:entry];
 }
 
 #pragma mark - Core Data Methods
@@ -95,11 +103,38 @@
 {
     switch (type) {
         case NSFetchedResultsChangeInsert:
-            <#statements#>
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath]
+                                  withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
 
-        default:
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath]
+                                  withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
+
+        case NSFetchedResultsChangeUpdate:
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath]
+                                  withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type
+{
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                                  withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+
     }
 }
 
@@ -179,7 +214,6 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -187,7 +221,13 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString: @"edit"]){
+        UITableViewCell * cell = sender;
+        NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+        UINavigationController * navigationController = segue.destinationViewController;
+        THNewEntryViewController * newEntryViewController = (THNewEntryViewController *) navigationController.topViewController;
+        newEntryViewController.entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    }
 }
-*/
 
 @end

@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+//create an enumeration that represents the moods for the entry.
+//THDiaryEntryMoodGood will be the default, since I'm setting it to zero.
+
 NS_ENUM(int16_t, THDiaryEntryMood){
     THDiaryEntryMoodGood = 0,
     THDiaryEntryMoodAverage = 1,

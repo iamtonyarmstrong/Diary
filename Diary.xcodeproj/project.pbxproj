@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9266FBB01956424B00FC5B29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266FBAF1956424B00FC5B29 /* QuartzCore.framework */; };
 		9299C0041953D16B00CCAC20 /* THNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299C0031953D16B00CCAC20 /* THNavigationController.m */; };
 		9299C0091953D7A700CCAC20 /* THEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299C0081953D7A700CCAC20 /* THEntryCell.m */; };
 		92ACF483194C6AAE00F036CB /* THCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACF482194C6AAE00F036CB /* THCoreDataStack.m */; };
@@ -23,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9266FBAD1956422C00FC5B29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92C513FD194952CD00C8AB96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92C51404194952CD00C8AB96;
+			remoteInfo = Diary;
+		};
 		92C51419194952CD00C8AB96 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 92C513FD194952CD00C8AB96 /* Project object */;
@@ -33,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9266FBAF1956424B00FC5B29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9299C0021953D16B00CCAC20 /* THNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THNavigationController.h; sourceTree = "<group>"; };
 		9299C0031953D16B00CCAC20 /* THNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THNavigationController.m; sourceTree = "<group>"; };
 		9299C0071953D7A700CCAC20 /* THEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THEntryCell.h; sourceTree = "<group>"; };
@@ -64,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9266FBB01956424B00FC5B29 /* QuartzCore.framework in Frameworks */,
 				92ACF490194E593C00F036CB /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9266FBAC1956026D00FC5B29 /* Data Classes */ = {
+			isa = PBXGroup;
+			children = (
+				92ACF484194D0A6400F036CB /* THDiaryEntry.h */,
+				92ACF485194D0A6400F036CB /* THDiaryEntry.m */,
+			);
+			name = "Data Classes";
+			sourceTree = "<group>";
+		};
 		9299C0051953D30000CCAC20 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,15 +110,13 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		9299C0061953D30F00CCAC20 /* Helper Classes */ = {
+		9299C0061953D30F00CCAC20 /* Core Data Classes */ = {
 			isa = PBXGroup;
 			children = (
 				92ACF481194C6AAE00F036CB /* THCoreDataStack.h */,
 				92ACF482194C6AAE00F036CB /* THCoreDataStack.m */,
-				92ACF484194D0A6400F036CB /* THDiaryEntry.h */,
-				92ACF485194D0A6400F036CB /* THDiaryEntry.m */,
 			);
-			name = "Helper Classes";
+			name = "Core Data Classes";
 			sourceTree = "<group>";
 		};
 		92C513FC194952CD00C8AB96 = {
@@ -129,7 +146,8 @@
 				92C51412194952CD00C8AB96 /* Images.xcassets */,
 				92C5140F194952CD00C8AB96 /* Diary.xcdatamodeld */,
 				92ACF487194DE90200F036CB /* MainStoryboard.storyboard */,
-				9299C0061953D30F00CCAC20 /* Helper Classes */,
+				9266FBAC1956026D00FC5B29 /* Data Classes */,
+				9299C0061953D30F00CCAC20 /* Core Data Classes */,
 				9299C0051953D30000CCAC20 /* Controllers */,
 				9299C0071953D7A700CCAC20 /* THEntryCell.h */,
 				9299C0081953D7A700CCAC20 /* THEntryCell.m */,
@@ -140,6 +158,7 @@
 		92C51408194952CD00C8AB96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9266FBAF1956424B00FC5B29 /* QuartzCore.framework */,
 				92ACF48F194E593C00F036CB /* CoreData.framework */,
 				92C51409194952CD00C8AB96 /* Info.plist */,
 				92C5140A194952CD00C8AB96 /* main.m */,
@@ -197,6 +216,7 @@
 			);
 			dependencies = (
 				92C5141A194952CD00C8AB96 /* PBXTargetDependency */,
+				9266FBAE1956422C00FC5B29 /* PBXTargetDependency */,
 			);
 			name = DiaryTests;
 			productName = DiaryTests;
@@ -286,6 +306,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9266FBAE1956422C00FC5B29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92C51404194952CD00C8AB96 /* Diary */;
+			targetProxy = 9266FBAD1956422C00FC5B29 /* PBXContainerItemProxy */;
+		};
 		92C5141A194952CD00C8AB96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 92C51404194952CD00C8AB96 /* Diary */;

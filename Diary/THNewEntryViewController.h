@@ -11,7 +11,9 @@
 
 @interface THNewEntryViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+
 @property (nonatomic, strong) THDiaryEntry * entry;
+@property (weak, nonatomic) IBOutlet UITextView * textView;
+
 
 @end

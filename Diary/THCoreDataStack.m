@@ -118,7 +118,7 @@
 - (NSURL *)applicationDocumentsDirectory {
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
                                                          inDomains:NSUserDomainMask] lastObject];
-    NSLog(@"%@", url.absoluteString);
+    //NSLog(@"%@", url.absoluteString);
 
     return url;
 

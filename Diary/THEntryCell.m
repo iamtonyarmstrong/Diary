@@ -8,6 +8,7 @@
 
 #import "THEntryCell.h"
 #import "THDiaryEntry.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface THEntryCell()
@@ -46,7 +47,7 @@
 + (CGFloat)heightForEntry:(THDiaryEntry*) entry
 {
     const CGFloat topMargin = 20.0f;
-    const CGFloat bottomMargin = 60.0f;
+    const CGFloat bottomMargin = 70.0f; //60.0f
     const CGFloat minHeight = 90.0f;
 
     UIFont * font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
@@ -70,18 +71,27 @@
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:entry.date];
     self.dateLabel.text = [dateFormatter stringFromDate:date];
 
+    //Add the default image or if an image is user-supplied, add that one.
     if(entry.imageData){
         self.mainImageView.image = [UIImage imageWithData:entry.imageData];
     } else {
         self.mainImageView.image = [UIImage imageNamed:@"icn_noimage"];
     }
+
+    //Handle the display of the moods...
     if(entry.mood == THDiaryEntryMoodGood){
         self.moodImageView.image = [UIImage imageNamed:@"icn_happy"]; //This will be the default because primitives default to 0
+
     } else if (entry.mood == THDiaryEntryMoodAverage) {
         self.moodImageView.image = [UIImage imageNamed:@"icn_average"];
+
     } else if (entry.mood == THDiaryEntryMoodBad) {
         self.moodImageView.image = [UIImage imageNamed:@"icn_bad"];
+
     }
+
+    //Round the image in the button, using the CALayer. Make sure that you set "Clips Subview" for imageView
+    self.mainImageView.layer.cornerRadius = CGRectGetWidth(self.mainImageView.frame)/2.0f;
 
 }
 

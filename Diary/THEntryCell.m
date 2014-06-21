@@ -12,13 +12,11 @@
 
 @interface THEntryCell()
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *moodImageView;
 @property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-
-
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end
 
@@ -47,16 +45,17 @@
 
 + (CGFloat)heightForEntry:(THDiaryEntry*) entry
 {
-    const CGFloat topMargin = 35.0f;
-    const CGFloat bottomMargin = 10.0f;
-    const CGFloat minHeight = 130.0f;
+    const CGFloat topMargin = 20.0f;
+    const CGFloat bottomMargin = 60.0f;
+    const CGFloat minHeight = 90.0f;
 
     UIFont * font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
 
-    CGRect boundingBox = [entry.body boundingRectWithSize:CGSizeMake(202.0, CGFLOAT_MAX)
+    CGRect boundingBox = [entry.body boundingRectWithSize:CGSizeMake(211.0, CGFLOAT_MAX)
                                                   options:(NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin)
                                                attributes:@{NSFontAttributeName: font}
                                                   context:nil];
+
     return MAX(minHeight, CGRectGetHeight(boundingBox) + topMargin + bottomMargin);
 
 }
@@ -64,18 +63,24 @@
 - (void)configureCellForEntry:(THDiaryEntry *)entry
 {
     self.bodyLabel.text = entry.body;
-//    self.locationLabel.text = entry.location;
-//
+    self.locationLabel.text = @"Miami, Florida"; // entry.location
+
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"EEEE, MMMM d yyyy"];
+    [dateFormatter setDateFormat:@"EEEE MMMM d, yyyy"];
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:entry.date];
-    NSLog(@"date %@", [dateFormatter stringFromDate:date]);
     self.dateLabel.text = [dateFormatter stringFromDate:date];
 
     if(entry.imageData){
         self.mainImageView.image = [UIImage imageWithData:entry.imageData];
     } else {
         self.mainImageView.image = [UIImage imageNamed:@"icn_noimage"];
+    }
+    if(entry.mood == THDiaryEntryMoodGood){
+        self.moodImageView.image = [UIImage imageNamed:@"icn_happy"]; //This will be the default because primitives default to 0
+    } else if (entry.mood == THDiaryEntryMoodAverage) {
+        self.moodImageView.image = [UIImage imageNamed:@"icn_average"];
+    } else if (entry.mood == THDiaryEntryMoodBad) {
+        self.moodImageView.image = [UIImage imageNamed:@"icn_bad"];
     }
 
 }

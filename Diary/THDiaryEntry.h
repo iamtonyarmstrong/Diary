@@ -12,7 +12,7 @@
 NS_ENUM(int16_t, THDiaryEntryMood){
     THDiaryEntryMoodGood = 0,
     THDiaryEntryMoodAverage = 1,
-    THDiaryEntryModdBad = 2
+    THDiaryEntryMoodBad = 2
 };
 
 @interface THDiaryEntry : NSManagedObject

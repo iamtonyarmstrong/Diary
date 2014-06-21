@@ -170,7 +170,7 @@
 
     THDiaryEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
     [cell configureCellForEntry:entry];
-    cell.textLabel.text = entry.body;
+    //cell.textLabel.text = entry.body;
     
     return cell;
 }

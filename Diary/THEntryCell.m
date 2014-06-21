@@ -12,11 +12,11 @@
 
 @interface THEntryCell()
 
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *moodImageView;
+@property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 
 
@@ -48,8 +48,8 @@
 + (CGFloat)heightForEntry:(THDiaryEntry*) entry
 {
     const CGFloat topMargin = 35.0f;
-    const CGFloat bottomMargin = 80.0f;
-    const CGFloat minHeight = 85.0f;
+    const CGFloat bottomMargin = 10.0f;
+    const CGFloat minHeight = 130.0f;
 
     UIFont * font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
 
@@ -64,8 +64,8 @@
 - (void)configureCellForEntry:(THDiaryEntry *)entry
 {
     self.bodyLabel.text = entry.body;
-    self.locationLabel.text = entry.location;
-
+//    self.locationLabel.text = entry.location;
+//
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"EEEE, MMMM d yyyy"];
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:entry.date];

@@ -13,4 +13,5 @@
 
 
 + (CGFloat)heightForEntry:(THDiaryEntry*) entry;
+- (void)configureCellForEntry:(THDiaryEntry *)entry;
 @end

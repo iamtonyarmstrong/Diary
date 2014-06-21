@@ -164,10 +164,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    THEntryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+
     THDiaryEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [cell configureCellForEntry:entry];
     cell.textLabel.text = entry.body;
     
     return cell;

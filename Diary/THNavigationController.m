@@ -13,7 +13,7 @@
 @end
 
 
-//Makes status bar and contents white...
+//Makes status bar contents white...
 @implementation THNavigationController
 
 - (UIStatusBarStyle)preferredStatusBarStyle

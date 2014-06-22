@@ -125,7 +125,6 @@
 		92C513FC194952CD00C8AB96 = {
 			isa = PBXGroup;
 			children = (
-				9266FBB1195647CA00FC5B29 /* CoreLocation.framework */,
 				92C51407194952CD00C8AB96 /* Diary */,
 				92C51408194952CD00C8AB96 /* Supporting Files */,
 				92C5141B194952CD00C8AB96 /* DiaryTests */,
@@ -162,6 +161,7 @@
 		92C51408194952CD00C8AB96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9266FBB1195647CA00FC5B29 /* CoreLocation.framework */,
 				9266FBAF1956424B00FC5B29 /* QuartzCore.framework */,
 				92ACF48F194E593C00F036CB /* CoreData.framework */,
 				92C51409194952CD00C8AB96 /* Info.plist */,

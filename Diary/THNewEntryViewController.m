@@ -97,16 +97,15 @@
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    NSLog(@"called");
     [self.locationManager stopUpdatingLocation];
     CLLocation * location = [locations firstObject];
     CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
     [geoCoder reverseGeocodeLocation:location
                    completionHandler:^(NSArray *placemarks, NSError *error) {
-                       NSLog(@"contents of locations array: %d", (unsigned)[locations count]);
-                        CLPlacemark * placemark = [placemarks firstObject];
-                        self.location = placemark.name;
-                       NSLog(@"location is: %@", placemark.name);
+                       CLPlacemark * placemark = [placemarks firstObject];
+                       //self.location = placemark.name; placemark.locality;
+                       NSMutableString * str = [[NSMutableString alloc] initWithFormat:@"%@, %@", placemark.name, placemark.locality];
+                       self.location = str;
                   }];
 }
 

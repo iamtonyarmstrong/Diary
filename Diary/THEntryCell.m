@@ -93,6 +93,12 @@
     //Round the image in the button, using the CALayer. Make sure that you set "Clips Subview" for imageView
     self.mainImageView.layer.cornerRadius = CGRectGetWidth(self.mainImageView.frame)/2.0f;
 
+    if (entry.location.length > 0){
+        self.locationLabel.text = entry.location;
+    } else {
+        self.locationLabel.text = @"No location";
+    }
+
 }
 
 

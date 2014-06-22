@@ -9,10 +9,13 @@
 #import "THNewEntryViewController.h"
 #import "THCoreDataStack.h"
 #import "THDiaryEntry.h"
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface THNewEntryViewController () <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface THNewEntryViewController () <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
 
+@property (nonatomic, strong) CLLocationManager * locationManager;
+@property (nonatomic, strong) NSString * location;
 @property (nonatomic, assign) enum THDiaryEntryMood pickedMood;
 @property (weak, nonatomic) IBOutlet UIButton * badButton;
 @property (weak, nonatomic) IBOutlet UIButton * averageButton;
@@ -56,6 +59,7 @@
     } else {
         self.pickedMood = THDiaryEntryMoodAverage;
         date = [NSDate date];
+        [self loadLocation];
 
     }
 
@@ -78,6 +82,35 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Location methods
+- (void) loadLocation
+{
+    if ([CLLocationManager locationServicesEnabled]) {
+        NSLog(@"Called loadLocation");
+        self.locationManager = [[CLLocationManager alloc]init];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = 1000; //1km of desired accuracy (about .62 miles)
+        [self.locationManager startUpdatingLocation];
+    }
+}
+
+- (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    NSLog(@"called");
+    [self.locationManager stopUpdatingLocation];
+    CLLocation * location = [locations firstObject];
+    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder reverseGeocodeLocation:location
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       NSLog(@"contents of locations array: %d", (unsigned)[locations count]);
+                        CLPlacemark * placemark = [placemarks firstObject];
+                        self.location = placemark.name;
+                       NSLog(@"location is: %@", placemark.name);
+                  }];
+}
+
+
 
 #pragma mark - Updating Diary entry elements
 - (void) updateDiaryEntry
@@ -155,6 +188,7 @@
     entry.date = [[NSDate date]timeIntervalSince1970];
     entry.mood = _pickedMood;
     entry.imageData = UIImageJPEGRepresentation(self.pickedImage, 0.80);
+    entry.location = self.location;
     [coreDataStack saveContext];
 
 }

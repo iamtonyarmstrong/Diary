@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9266FBB01956424B00FC5B29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266FBAF1956424B00FC5B29 /* QuartzCore.framework */; };
+		9266FBB2195647CA00FC5B29 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9266FBB1195647CA00FC5B29 /* CoreLocation.framework */; };
 		9299C0041953D16B00CCAC20 /* THNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299C0031953D16B00CCAC20 /* THNavigationController.m */; };
 		9299C0091953D7A700CCAC20 /* THEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9299C0081953D7A700CCAC20 /* THEntryCell.m */; };
 		92ACF483194C6AAE00F036CB /* THCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACF482194C6AAE00F036CB /* THCoreDataStack.m */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		9266FBAF1956424B00FC5B29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9266FBB1195647CA00FC5B29 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9299C0021953D16B00CCAC20 /* THNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THNavigationController.h; sourceTree = "<group>"; };
 		9299C0031953D16B00CCAC20 /* THNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THNavigationController.m; sourceTree = "<group>"; };
 		9299C0071953D7A700CCAC20 /* THEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THEntryCell.h; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9266FBB2195647CA00FC5B29 /* CoreLocation.framework in Frameworks */,
 				9266FBB01956424B00FC5B29 /* QuartzCore.framework in Frameworks */,
 				92ACF490194E593C00F036CB /* CoreData.framework in Frameworks */,
 			);
@@ -122,6 +125,7 @@
 		92C513FC194952CD00C8AB96 = {
 			isa = PBXGroup;
 			children = (
+				9266FBB1195647CA00FC5B29 /* CoreLocation.framework */,
 				92C51407194952CD00C8AB96 /* Diary */,
 				92C51408194952CD00C8AB96 /* Supporting Files */,
 				92C5141B194952CD00C8AB96 /* DiaryTests */,
